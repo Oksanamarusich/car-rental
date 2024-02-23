@@ -2,14 +2,13 @@ import Modal from "react-modal";
 
 import { Card } from "../Card/Card";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState } from "react";
-
 import { selectCars } from "../../redux/cars/selectors";
-
 import { Link } from "react-router-dom";
 
 Modal.setAppElement("#root");
+
 const customStyles = {
   content: {
     top: "50%",
@@ -26,8 +25,6 @@ const customStyles = {
 
 export const ListCars = () => {
   const cars = useSelector(selectCars);
-
-  const dispatch = useDispatch();
 
   const [modalIsOpen, setIsOpen] = useState(false);
 

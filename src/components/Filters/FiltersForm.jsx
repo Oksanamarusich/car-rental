@@ -7,10 +7,10 @@ export const FiltersForm = () => {
 
   const make = cars.map((car) => car.make);
 
-  const handleSubmit = (event) => {
-      event.preventDefault();
+//   const handleSubmit = (event) => {
+//       event.preventDefault();
       
-    };
+//     };
     
   return (
     <>
