@@ -1,37 +1,93 @@
+import { ContainerCard } from "./Card.styled";
+
+import { useSelector } from "react-redux";
+import { selectCars } from "../../redux/cars/selectors";
+
 export const Card = () => {
-    const cars = useSelector(selectCars);
-    const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700'
-    const rentalConditions = cars.rentalConditions.split('/');
+  const cars = useSelector(selectCars);
     
-    return <div>
-        {/* <img src={movie.poster_path
-                         ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                         : defaultImg} width={500} alt={movie.title} /> */}
-         <img src={cars.img }width={461} height={248} alt="car"/>
-        <h3>
-                      {s.make} <span>{cars.model}</span>, {cars.year}
+    
+    return (<>
+     {cars.map((car) => (
+        <ContainerCard key={car.id}>
+          <img src={car.img} width={461} height={248} alt="car" />
+          <h3>
+            {car.make} <span>{car.model}</span>, {car.year}
           </h3>
-        <p>{cars.adress }</p>
-        <p>{cars.adress }</p>
-        <p>Id:{cars.id }</p>
-        <p>Year:{cars.year }</p>
-        <p>Type:{cars.type}</p>
-        <p>Fuel Consumption:{cars.fuelConsumption }</p>
-        <p>Engine Size:{cars.engineSize }</p>
-        <p>{cars.description }</p>
-        <h3>Accessories and functionalities: </h3>
-        <p>{cars.accessories[0]}</p>
-<p>{cars.accessories[1]}</p>
-<p>{cars.accessories[2]}</p>
-<p>{cars.functionalities[0] }</p>
-<p>{cars.functionalities[1] }</p>
-        <p>{cars.functionalities[2]}</p>
-        <h3>Rental Conditions: </h3>
-        <p>{cars.rentalConditions }</p>
-        <p>{cars.rentalConditions }</p>
-        <p>{cars.rentalConditions } </p>
-        <p>Mileage: {cars.mileage }</p>
-        <p>Price: {cars.rentalPrice }</p>
-        <button type="button">Rental car</button>
-    </div>
-}
+          <p>{car.adress}</p>
+          <p>{car.adress}</p>
+          <p>Id:{car.id}</p>
+          <p>Year:{car.year}</p>
+          <p>Type:{car.type}</p>
+          <p>Fuel Consumption:{car.fuelConsumption}</p>
+          <p>Engine Size:{car.engineSize}</p>
+          <p>{car.description}</p>
+          <h3>Accessories and functionalities: </h3>
+          <p>{car.accessories[0]}</p>
+          <p>{car.accessories[1]}</p>
+          <p>{car.accessories[2]}</p>
+          <p>{car.functionalities[0]}</p>
+          <p>{car.functionalities[1]}</p>
+          <p>{car.functionalities[2]}</p>
+          <h3>Rental Conditions: </h3>
+          <p>{car.rentalConditions}</p>
+          <p>{car.rentalConditions}</p>
+          <p>{car.rentalConditions} </p>
+          <p>Mileage: {car.mileage}</p>
+              <p>Price: {car.rentalPrice}</p>
+               <button type="button">Rental car</button>
+        </ContainerCard>
+     ))}
+    </>
+
+     
+
+     
+    
+  );
+};
+
+
+// export const Card = () => {
+//   const cars = useSelector(selectCars);
+    
+    
+//     return (<>
+//      {cars.map((car) => (
+//         <ContainerCard key={car.id}>
+//           <img src={car.img} width={461} height={248} alt="car" />
+//           <h3>
+//             {car.make} <span>{car.model}</span>, {car.year}
+//           </h3>
+//           <p>{car.adress}</p>
+//           <p>{car.adress}</p>
+//           <p>Id:{car.id}</p>
+//           <p>Year:{car.year}</p>
+//           <p>Type:{car.type}</p>
+//           <p>Fuel Consumption:{car.fuelConsumption}</p>
+//           <p>Engine Size:{car.engineSize}</p>
+//           <p>{car.description}</p>
+//           <h3>Accessories and functionalities: </h3>
+//           <p>{car.accessories[0]}</p>
+//           <p>{car.accessories[1]}</p>
+//           <p>{car.accessories[2]}</p>
+//           <p>{car.functionalities[0]}</p>
+//           <p>{car.functionalities[1]}</p>
+//           <p>{car.functionalities[2]}</p>
+//           <h3>Rental Conditions: </h3>
+//           <p>{car.rentalConditions}</p>
+//           <p>{car.rentalConditions}</p>
+//           <p>{car.rentalConditions} </p>
+//           <p>Mileage: {car.mileage}</p>
+//               <p>Price: {car.rentalPrice}</p>
+//                <button type="button">Rental car</button>
+//         </ContainerCard>
+//      ))}
+//     </>
+
+     
+
+     
+    
+//   );
+// };
