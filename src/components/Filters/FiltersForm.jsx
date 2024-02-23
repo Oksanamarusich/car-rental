@@ -1,15 +1,18 @@
 import { Formik, Form, Field } from "formik";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getCars } from "../../redux/cars/operations";
 import { selectCars } from "../../redux/cars/selectors";
 
+
 export const FiltersForm = () => {
-  const cars = useSelector(selectCars);
+    const cars = useSelector(selectCars);
+    const dispatch = useDispatch();
 
   const make = cars.map((car) => car.make);
 
 //   const handleSubmit = (event) => {
 //       event.preventDefault();
-      
+//       dispatch(getCars());
 //     };
     
   return (
@@ -19,8 +22,9 @@ export const FiltersForm = () => {
           carMake: make,
           //   price: "",
           //   carMileage: "",
-        }}
-        onSubmit={(values) => console.log(values.carMake)}
+              }}
+              onSubmit={values=>values.carMake}
+        // onSubmit={dispatch(getCars())}
       >
         <Form>
           <label>
