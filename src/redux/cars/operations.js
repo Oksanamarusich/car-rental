@@ -8,7 +8,7 @@ export const getCars = createAsyncThunk("cars/getAll",
         
         try {
             const responce = await axios.get('/?page=1&limit=12');
-            console.log(responce);
+            
             return responce.data;
            
         } catch (e) {
@@ -16,3 +16,5 @@ export const getCars = createAsyncThunk("cars/getAll",
         }
         
     });
+
+    
