@@ -23,9 +23,9 @@ const carsSlice = createSlice({
     name: 'cars',
     initialState: {
         cars: [],
-        page:1,
         isLoading: false,
         error: null,
+        
     },
 
     extraReducers: (builder) => {

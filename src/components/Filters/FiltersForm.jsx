@@ -1,60 +1,62 @@
-import { Formik, Form, Field } from "formik";
+import { Formik} from "formik";
 import { useSelector, useDispatch } from "react-redux";
-import { getCars } from "../../redux/cars/operations";
+// import { getCars } from "../../redux/cars/operations";
 import { selectCars } from "../../redux/cars/selectors";
-
+import { changeFilter } from "../../redux/filterSlice";
+import { ListCars } from "../ListCars/ListCars";
+import { ButtonForm, FiltersContainer, StyledField, StyledFieldFrom, StyledFieldPrice, StyledForm, StyledLabel, StyledOption } from "./Filters.styled";
 
 export const FiltersForm = () => {
-    const cars = useSelector(selectCars);
-    const dispatch = useDispatch();
-
+  const cars = useSelector(selectCars);
+  const dispatch = useDispatch();
   const make = cars.map((car) => car.make);
+  console.log(make);
 
-//   const handleSubmit = (event) => {
-//       event.preventDefault();
-//       dispatch(getCars());
-//     };
-    
   return (
     <>
+    <FiltersContainer>
       <Formik
         initialValues={{
-          carMake: make,
-          //   price: "",
-          //   carMileage: "",
-              }}
-              onSubmit={values=>values.carMake}
-        // onSubmit={dispatch(getCars())}
+          carBrand: make,
+        }}
+        onSubmit={(values) => dispatch(changeFilter(values.carBrand, cars))}
+        // console.log(values.carBrand)}
+        // onSubmit={dispatch(changeFilter(make))}
       >
-        <Form>
-          <label>
+        <StyledForm>
+          <StyledLabel>
             Car brand
-            <Field as="select" name="carMake" placeholder="Enter the text">
+            <StyledField as="select" name="carBrand" >
+              <option>Enter the text</option>
               {make.map((make, index) => (
                 <option key={index} value={make}>
                   {make}
                 </option>
               ))}
-            </Field>
-          </label>
+            </StyledField>
+          </StyledLabel>
 
-          {/* <label>
+          <StyledLabel>
             Price/1h
-            <Field as="select" name="price" placeholder="To $" type="number">
+            <StyledFieldPrice as="select" name="price" placeholder="To $" type="number">
+              <option value="">To $</option>
               <option value="10">10</option>
-              <option value="20">20</option>
-            </Field>
-          </label>
+            </StyledFieldPrice>
+          </StyledLabel>
 
-          <label>
+          {/* <StyledLabel>
             Car mileage/km
-            <Field name="carMileageFrom" placeholder="From" />
-            <Field name="carMileageTo" placeholder="To" />
-          </label> */}
+            <StyledFieldFrom name="carMileageFrom" placeholder="From" />
+            <StyledField name="carMileageTo" placeholder="To" />
+          </StyledLabel> */}
 
-          <button type="submit">Search</button>
-        </Form>
+          <ButtonForm type="submit">Search</ButtonForm>
+        </StyledForm>
       </Formik>
+      
+      </FiltersContainer>
+      <ListCars />
     </>
+    
   );
 };

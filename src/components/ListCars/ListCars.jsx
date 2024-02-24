@@ -1,11 +1,25 @@
 import Modal from "react-modal";
+import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
+
 
 import { Card } from "../Card/Card";
 
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { selectCars } from "../../redux/cars/selectors";
-import { Link } from "react-router-dom";
+import {
+  CarPhoto,
+  Container,
+  ContainerListCars,
+ CardContainer,
+  ContainerTitles,
+  HeartButton,
+  Span,
+  Text,
+  Title,
+  ButtonLoadMore,
+} from "./ListCars.styled";
+import { Button } from "../Button.styled";
 
 Modal.setAppElement("#root");
 
@@ -17,9 +31,11 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    padding: '0',
+    borderRadius: "24px"
   },
   overlay: {
-    backgroundColor: "rgba (18, 20, 23, 0.5)",
+    backgroundColor: "rgba(18, 20, 23, 0.5)",
   },
 };
 
@@ -36,30 +52,44 @@ export const ListCars = () => {
     setIsOpen(false);
   }
 
+  const handleFavoritesClick = (id) => {
+    // const carId = cars.map(car => car.id);
+    // console.log(carId)
+    // isFavorites: true;
+    // addToFavorites(car);
+    console.log(id);
+  };
+
   return (
     <>
-      <ul>
+      <ContainerListCars>
         {cars.map((car) => (
-          <li key={car.id}>
-            <img src={car.img} width={274} height={268} alt="car" />
-            <h3>
-              {car.make} <span>{car.model}</span>, {car.year}
-            </h3>
-            <h3>{car.rentalPrice}</h3>
-            <p>{car.address.split(",")[2]}</p>
-            <p>{car.address.split(",")[1]}</p>
-            <p>{car.rentalCompany}</p>
+          <CardContainer key={car.id}>
+            
+              <CarPhoto src={car.img} width={274} height={268} alt="car" />
+            
 
-            <p>{car.type}</p>
-            <p>{car.model}</p>
-            <p>{car.id}</p>
-            <p>{car.functionalities[0]}</p>
-            {/* <button type="button" >
-              
-              heart</button> */}
-            <Link to={"/favorites"}>
-              <button>heard</button>
-            </Link>
+            <ContainerTitles>
+              <Title>
+                {car.make} <Span>{car.model}</Span>, {car.year}
+              </Title>
+              <Title>{car.rentalPrice}</Title>
+            </ContainerTitles>
+            <Container>
+              <Text>{car.address.split(",")[2]}</Text>
+              <Text>{car.address.split(",")[1]}</Text>
+              <Text>{car.rentalCompany}</Text>
+
+              <Text>{car.type}</Text>
+              <Text>{car.model}</Text>
+              <Text>{car.id}</Text>
+              <Text>{car.functionalities[0]}</Text>
+            </Container>
+
+            <HeartButton id={car.id} onClick={handleFavoritesClick}>
+              <IoHeartOutline size="18px"  />
+            </HeartButton>
+            {/* <IoHeartSharp /> */}
             <Modal
               isOpen={modalIsOpen}
               //  onAfterOpen={afterOpenModal}
@@ -67,14 +97,18 @@ export const ListCars = () => {
               style={customStyles}
               contentLabel="Car card"
             >
-              <Card id={car.id} car={car} />
+              <Card id={car.id} car={car}  />
+              
             </Modal>
-            <button type="button" onClick={openModal}>
+            <Button type="button" onClick={openModal}>
               Learn more
-            </button>
-          </li>
+            </Button>
+            
+          </CardContainer>
+          
         ))}
-      </ul>
+        <ButtonLoadMore type="button">Load more</ButtonLoadMore>
+      </ContainerListCars>
     </>
   );
 };

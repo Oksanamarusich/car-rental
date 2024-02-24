@@ -1,8 +1,12 @@
+import { FaArrowRightLong } from "react-icons/fa6";
+
+import { ContainerLink, Link, Main, Text, Title } from "./HomePage.styled";
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>Rental car</h1>
-      <p>
+    <Main>
+      <Title>Rental car</Title>
+      <Text>
         Get the freedom to explore Ukraine with Car Rental - your reliable
         partner for smooth and affordable travel. Discover enchanting landscapes
         and vibrant cities with our reliable car rental services. From the
@@ -11,12 +15,18 @@ export default function HomePage() {
         short-term or long-term car rental to make your trip to Ukraine
         unforgettable and stress-free. Rent a car in Kyiv and beyond, and let
         Car Rental become your gateway to adventure.
-          </p>
-          {/* <h2>Our advantages</h2> */}
-      <p>
+      </Text>
+
+      <Text>
         We are proud of the growing preference of both Ukrainians and guests of
         our daily, monthly and long-term car rental services.
-      </p>
-    </main>
+      </Text>
+      
+        <Link to={"/catalog"}>
+          <ContainerLink>Choose a car <FaArrowRightLong /></ContainerLink>
+          
+        </Link>
+    
+    </Main>
   );
 }
