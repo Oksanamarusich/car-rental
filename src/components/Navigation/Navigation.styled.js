@@ -9,10 +9,10 @@ font-size: 18px;
 line-height: 1.5;
 color: ${props => props.theme.colors.black};
 cursor:pointer;
-transition:${props=>props.theme.animation};
+transition:${props=>props.theme.animation.cubikBezier};
 
 &.active{
-    color:${props => props.theme.colors.blue};
+    color:${props => props.theme.colors.accent};
      text-decoration:underline;
 }
 `

@@ -1,25 +1,25 @@
 import Modal from "react-modal";
 import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
 
-
 import { Card } from "../Card/Card";
 
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { useState } from "react";
-import { selectCars } from "../../redux/cars/selectors";
+import {  selectVisibleCars } from "../../redux/cars/selectors";
 import {
   CarPhoto,
   Container,
   ContainerListCars,
- CardContainer,
+  CardContainer,
   ContainerTitles,
   HeartButton,
   Span,
   Text,
   Title,
-  ButtonLoadMore,
 } from "./ListCars.styled";
 import { Button } from "../Button.styled";
+import { ButtonloadMore } from "../ButtonLoadMore/ButtonLoadMore";
+
 
 Modal.setAppElement("#root");
 
@@ -31,19 +31,21 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: '0',
-    borderRadius: "24px"
+    padding: "0",
+    borderRadius: "24px",
   },
   overlay: {
-    backgroundColor: "rgba(18, 20, 23, 0.5)",
+    backgroundColor: "rgba(18, 20, 23, 0.3)",
   },
 };
 
 export const ListCars = () => {
-  const cars = useSelector(selectCars);
+  const cars = useSelector(selectVisibleCars);
+  console.log(cars);
+  // const dispatch = useDispatch();
 
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  const [toggleHeart, setToggleHeart] = useState(false);
   function openModal() {
     setIsOpen(true);
   }
@@ -52,12 +54,10 @@ export const ListCars = () => {
     setIsOpen(false);
   }
 
-  const handleFavoritesClick = (id) => {
-    // const carId = cars.map(car => car.id);
-    // console.log(carId)
-    // isFavorites: true;
-    // addToFavorites(car);
-    console.log(id);
+  const handleFavoritesToggle = ({id}) => {
+     console.log(id)
+    // dispatch(toggleFavorite({ carId }));
+    setToggleHeart(!toggleHeart);
   };
 
   return (
@@ -65,9 +65,7 @@ export const ListCars = () => {
       <ContainerListCars>
         {cars.map((car) => (
           <CardContainer key={car.id}>
-            
-              <CarPhoto src={car.img} width={274} height={268} alt="car" />
-            
+            <CarPhoto src={car.img} width={274} height={268} alt="car" />
 
             <ContainerTitles>
               <Title>
@@ -86,10 +84,14 @@ export const ListCars = () => {
               <Text>{car.functionalities[0]}</Text>
             </Container>
 
-            <HeartButton id={car.id} onClick={handleFavoritesClick}>
-              <IoHeartOutline size="18px"  />
+            <HeartButton key={car.id} id={car.id}onClick={handleFavoritesToggle}>
+              {toggleHeart ? (
+                <IoHeartSharp color="#3470FF" />
+              ) : (
+                <IoHeartOutline size="18px"  />
+              )}
             </HeartButton>
-            {/* <IoHeartSharp /> */}
+
             <Modal
               isOpen={modalIsOpen}
               //  onAfterOpen={afterOpenModal}
@@ -97,17 +99,14 @@ export const ListCars = () => {
               style={customStyles}
               contentLabel="Car card"
             >
-              <Card id={car.id} car={car}  />
-              
+              <Card key={car.id} id={car.id} car={car} closeModal={closeModal} />
             </Modal>
             <Button type="button" onClick={openModal}>
               Learn more
             </Button>
-            
           </CardContainer>
-          
         ))}
-        <ButtonLoadMore type="button">Load more</ButtonLoadMore>
+        <ButtonloadMore />
       </ContainerListCars>
     </>
   );

@@ -12,11 +12,12 @@ const theme = {
   colors: {
     light: '#ffffff',
     black: '#121417',
-    blue: '#3470FF',
+    accent: '#3470FF',
     gray: 'rgba(18, 20, 23, 0.5)',
     brown: '#8a8a89',
     input: '#f7f7fb',
-    
+    hover: '#0b44cd',
+    before:'rgba(18, 20, 23, 0.1)',
   },
   // shadows: {
   //   small: "0 5px 7px -1px rgba(51, 51, 51, 0.23)",
@@ -31,14 +32,14 @@ const theme = {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="car-rental">
           <ThemeProvider theme={theme}>
             <App />
             <GlobalStyle />
           </ThemeProvider>
         </BrowserRouter>
-      {/* </PersistGate> */}
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );

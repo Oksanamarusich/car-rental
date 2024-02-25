@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterSlice = createSlice({
   name: "filter",
   initialState: {
-    carBrands: [],
+    carBrand:"",
   },
   reducers: {
     changeFilter(state, action) {
-      state.filter = action.payload;
+      state.carBrand = action.payload;
+       
     },
   },
 });
