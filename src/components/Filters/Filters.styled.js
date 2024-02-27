@@ -26,16 +26,22 @@ export const StyledSelect = styled.select`
   outline: transparent;
   outline-offset: -1px;
   border-radius: 14px;
-  padding: 18px  14px 18px;
+  padding:14px 18px; 
   width: 224px;
   height: 48px;
   border: 0;
   background: ${(props) => props.theme.colors.input};
+  font-family: "Manrope", sans-serif;
+font-weight: 500;
+font-size: 18px;
+line-height: 1.11111;
+color: ${props=>props.theme.colors.black};
   &:active {
     border: 0;
   }
 `;
 export const StyledOption = styled.option`
+border-radius: 14px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   font-size: 16px;

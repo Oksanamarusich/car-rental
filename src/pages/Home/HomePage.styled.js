@@ -10,7 +10,7 @@ export const Title = styled.h1`
   font-size: 35px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: ${(props) => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.accent};
 `;
 
 export const Text = styled.p`

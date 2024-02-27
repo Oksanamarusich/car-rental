@@ -3,9 +3,9 @@ import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
 
 import { Card } from "../Card/Card";
 
-import {  useSelector } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import {  selectVisibleCars } from "../../redux/cars/selectors";
+import {  selectCars} from "../../redux/cars/selectors";
 import {
   CarPhoto,
   Container,
@@ -16,9 +16,11 @@ import {
   Span,
   Text,
   Title,
+  Box,
 } from "./ListCars.styled";
 import { Button } from "../Button.styled";
 import { ButtonloadMore } from "../ButtonLoadMore/ButtonLoadMore";
+import { getCarId } from "../../redux/cars/operations";
 
 
 Modal.setAppElement("#root");
@@ -40,12 +42,15 @@ const customStyles = {
 };
 
 export const ListCars = () => {
-  const cars = useSelector(selectVisibleCars);
+  // const cars = useSelector(selectVisibleCars);
+    const cars = useSelector(selectCars);
   console.log(cars);
-  // const dispatch = useDispatch();
-
+   const dispatch = useDispatch();
+  const carId = cars.id;
+  console.log(cars.id)
   const [modalIsOpen, setIsOpen] = useState(false);
   const [toggleHeart, setToggleHeart] = useState(false);
+ 
   function openModal() {
     setIsOpen(true);
   }
@@ -54,9 +59,9 @@ export const ListCars = () => {
     setIsOpen(false);
   }
 
-  const handleFavoritesToggle = ({id}) => {
-     console.log(id)
-    // dispatch(toggleFavorite({ carId }));
+  const handleFavoritesToggle = () => {
+    
+     dispatch(getCarId({ carId }));
     setToggleHeart(!toggleHeart);
   };
 
@@ -73,18 +78,21 @@ export const ListCars = () => {
               </Title>
               <Title>{car.rentalPrice}</Title>
             </ContainerTitles>
-            <Container>
-              <Text>{car.address.split(",")[2]}</Text>
+            <Box>
               <Text>{car.address.split(",")[1]}</Text>
+              <Text>{car.address.split(",")[2]}</Text>
               <Text>{car.rentalCompany}</Text>
 
-              <Text>{car.type}</Text>
+              <Text>{car.make}</Text> </Box>
+            <Container>
               <Text>{car.model}</Text>
               <Text>{car.id}</Text>
               <Text>{car.functionalities[0]}</Text>
             </Container>
+              
+           
 
-            <HeartButton key={car.id} id={car.id}onClick={handleFavoritesToggle}>
+            <HeartButton key={car.id} id={car.id} onClick={handleFavoritesToggle}>
               {toggleHeart ? (
                 <IoHeartSharp color="#3470FF" />
               ) : (

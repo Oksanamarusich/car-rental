@@ -24,6 +24,23 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+      if (
+        window.location.protocol === "http:" &&
+        window.location.hostname !== "localhost"
+      ) {
+        window.location.replace(
+          window.location.href.replace("http:", "https:")
+        );
+      }
+      if (
+        window.location.protocol === "https:" &&
+        !window.location.pathname.startsWith("/index.html")
+      ) {
+        window.location.href =
+          "/index.html" + window.location.search + window.location.hash;
+      }
+    </script>
     <title>Car Rental</title>
   </head>
   <body>

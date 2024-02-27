@@ -1,5 +1,5 @@
 import { ListCars } from "../../components/ListCars/ListCars";
-import { FiltersForm } from "../../components/Filters/FiltersForm";
+
 
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -10,11 +10,12 @@ export default function Catalog() {
 
   useEffect(() => {
     dispatch(getCars());
+    getCars();
   }, [dispatch]);
 
   return (
     <>
-      <FiltersForm />
+      {/* <FiltersForm /> */}
       <ListCars />
     </>
   );

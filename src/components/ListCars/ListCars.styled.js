@@ -41,12 +41,12 @@ export const ContainerTitles = styled.div`
   margin-bottom: 8px;
 `;
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 12px;
-  margin-bottom: 28px;
-  width: 274px;
-  height: 40px;
+   display: flex;
+  margin-bottom:28px;
+  gap: 12px;
+  /* margin-bottom: 28px; */
+  width: 251px;
+  height: 18px;
 `;
 export const Text = styled.p`
   position: relative;
@@ -55,6 +55,7 @@ export const Text = styled.p`
   font-size: 12px;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.gray};
+  white-space:nowrap:
 
   /* &::before {
     content: "";
@@ -67,6 +68,13 @@ export const Text = styled.p`
     background-color: ${(props) => props.theme.colors.before};
   } */
 `;
+export const Box = styled.div`
+display:flex;
+gap: 12px;
+margin-bottom:4px;
+width: 272px;
+height: 18px;
+`
 
 export const HeartButton = styled.button`
   position: absolute;

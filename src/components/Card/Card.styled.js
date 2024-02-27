@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
-export const ContainerCard = styled.li`
+export const ContainerCard = styled.div`
   position: relative;
   padding: 40px;
   border-radius: 24px;
-  width: 541px;
-  height: 752px;
+width: 541px;
+height: 100%;
   background-color: ${(props) => props.theme.colors.light};
 `;
 
 export const ContainerText = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 12px;
-  margin-bottom: 14px;
-  width: 274px;
-  height: 40px;
+  gap: 12px;
+  margin-bottom: 4px;
+  width: 272px;
+  height: 18px;
 `;
+
+export const TextBox = styled.div`
+display:flex;
+gap:12px;
+margin-bottom:14px;
+height: 18px;
+`
 
 export const DescriptionText = styled.p`
   margin-bottom: 24px;

@@ -1,4 +1,4 @@
-import { CarPhoto, Span, Text, Title } from "../ListCars/ListCars.styled";
+import { CarPhoto, ContainerTitles, Span, Text, Title } from "../ListCars/ListCars.styled";
 import {
   ButtonCard,
   ButtonClose,
@@ -7,33 +7,37 @@ import {
   ContainerText,
   DescriptionText,
   RentalConditions,
+  TextBox,
   TextContainer,
   TitleAcessories,
 } from "./Card.styled";
 import { IoMdClose } from "react-icons/io";
 
-export const Card = ({ car ,id, closeModal}) => {
+export const Card = ({ car, id, closeModal }) => {
   const mileage = new Intl.NumberFormat("en-US").format(car.mileage);
 
   const handleCall = () => {
-    window.location.href = 'tel:+380730000000';
-  }
+    window.location.href = "tel:+380730000000";
+  };
 
   return (
     <ContainerCard key={id}>
       <CarPhoto src={car.img} width={461} height={248} alt="car" />
-      <Title>
+      <ContainerTitles><Title>
         {car.make} <Span>{car.model}</Span>, {car.year}
-      </Title>
+      </Title></ContainerTitles>
+      
       <ContainerText>
-        <Text>{car.adress}</Text>
-        <Text>{car.adress}</Text>
+        <Text>{car.address.split(",")[1]}</Text>
+        <Text>{car.address.split(",")[0]}</Text>
         <Text>Id:{car.id}</Text>
         <Text>Year:{car.year}</Text>
         <Text>Type:{car.type}</Text>
+      </ContainerText>
+      <TextBox>
         <Text>Fuel Consumption:{car.fuelConsumption}</Text>
         <Text>Engine Size:{car.engineSize}</Text>
-      </ContainerText>
+      </TextBox>
 
       <DescriptionText>{car.description}</DescriptionText>
       <TitleAcessories>Accessories and functionalities: </TitleAcessories>
@@ -59,7 +63,9 @@ export const Card = ({ car ,id, closeModal}) => {
         <RentalConditions>Price: {car.rentalPrice}</RentalConditions>
       </ContainerRentalConditions>
 
-      <ButtonCard type="button" onClick={handleCall}>Rental car</ButtonCard>
+      <ButtonCard type="button" onClick={handleCall}>
+        Rental car
+      </ButtonCard>
       <ButtonClose type="button" onClick={closeModal}>
         <IoMdClose />
       </ButtonClose>

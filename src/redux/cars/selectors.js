@@ -12,6 +12,7 @@ export const selectFilter = (state) => state.filter.carBrand;
 export const selectVisibleCars = createSelector(
   [selectCars, selectFilter],
   (cars, filter) => {
+    
     return cars.filter(car => car.make === filter);
   }
 );
