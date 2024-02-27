@@ -19,7 +19,7 @@ import {
   Box,
 } from "./ListCars.styled";
 import { Button } from "../Button.styled";
-import { ButtonloadMore } from "../ButtonLoadMore/ButtonLoadMore";
+
 import { getCarId } from "../../redux/cars/operations";
 
 
@@ -114,7 +114,7 @@ export const ListCars = () => {
             </Button>
           </CardContainer>
         ))}
-        <ButtonloadMore />
+        
       </ContainerListCars>
     </>
   );

@@ -1,18 +1,18 @@
 import { styled } from "styled-components";
 
 export const ContainerListCars = styled.ul`
-  /* padding: 0 125px; */
-  display: grid;
-  /* grid-template-columns: repeat(4, 274px); */
-  grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+  owerflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   grid-row-gap: 50px;
   grid-column-gap: 29px;
+  margin-bottom: 100px;
 `;
 
 export const CardContainer = styled.li`
   position: relative;
-  /* width:274px;
-height:426px; */
+ width: 274px;
 `;
 
 export const CarPhoto = styled.img`
@@ -41,10 +41,9 @@ export const ContainerTitles = styled.div`
   margin-bottom: 8px;
 `;
 export const Container = styled.div`
-   display: flex;
-  margin-bottom:28px;
+  display: flex;
+  margin-bottom: 28px;
   gap: 12px;
-  /* margin-bottom: 28px; */
   width: 251px;
   height: 18px;
 `;
@@ -69,12 +68,12 @@ export const Text = styled.p`
   } */
 `;
 export const Box = styled.div`
-display:flex;
-gap: 12px;
-margin-bottom:4px;
-width: 272px;
-height: 18px;
-`
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+  width: 272px;
+  height: 18px;
+`;
 
 export const HeartButton = styled.button`
   position: absolute;

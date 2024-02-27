@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ButtonLoadMore = styled.button`
-  margin: 50px 680px 150px;
+  margin: 0 680px 150px;
   width:79px;
   border: 0;
   background-color: transparent;
