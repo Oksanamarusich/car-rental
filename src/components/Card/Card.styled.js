@@ -7,6 +7,7 @@ export const ContainerCard = styled.div`
 width: 541px;
 height: 100%;
   background-color: ${(props) => props.theme.colors.light};
+  
 `;
 
 export const ContainerText = styled.div`
@@ -15,6 +16,7 @@ export const ContainerText = styled.div`
   margin-bottom: 4px;
   width: 272px;
   height: 18px;
+  overflow:hidden;
 `;
 
 export const TextBox = styled.div`
@@ -22,6 +24,7 @@ display:flex;
 gap:12px;
 margin-bottom:14px;
 height: 18px;
+overflow:hidden;
 `
 
 export const DescriptionText = styled.p`
@@ -47,6 +50,7 @@ export const TextContainer = styled.div`
   margin-bottom: 24px;
   width: 461px;
   height: 40px;
+  
 `;
 
 export const RentalConditions = styled.p`

@@ -1,11 +1,20 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 
-import { ContainerLink, Link, Main, Text, Title } from "./HomePage.styled";
+import { ContainerLink, Link, Text, Title,ContainerImage } from "./HomePage.styled";
+// import image from '../../img/car-5476918_1280.jpg'
+
 
 export default function HomePage() {
   return (
-    <Main>
-      <Title>Rental car</Title>
+    <main>
+      <ContainerImage >
+        <Title>Rental car</Title>
+      </ContainerImage>
+      
+      {/* <div>
+        <img src={image} alt="car"/>
+      </div> */}
+      
       <Text>
         Get the freedom to explore Ukraine with Car Rental - your reliable
         partner for smooth and affordable travel. Discover enchanting landscapes
@@ -27,6 +36,6 @@ export default function HomePage() {
           
         </Link>
     
-    </Main>
+    </main>
   );
 }

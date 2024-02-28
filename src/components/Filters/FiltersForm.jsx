@@ -1,4 +1,3 @@
-
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectCars, selectFilter } from "../../redux/cars/selectors";
@@ -16,9 +15,12 @@ import {
 export const FiltersForm = () => {
   const cars = useSelector(selectCars);
   const carBrand = useSelector(selectFilter);
+  console.log(carBrand)
   const dispatch = useDispatch();
-  // const filteredCars = cars.filter(car => car.make === carBrand);
-  // console.log(filteredCars)
+  // const filteredCars = cars.filter((car) => car.make === carBrand);
+  // console.log(filteredCars);
+  const uniqueMakes = [...new Set(cars.map(car => car.make))];
+  console.log(uniqueMakes);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -29,7 +31,7 @@ export const FiltersForm = () => {
   const handleChange = (evt) => {
     console.log(evt.target.value);
     const selectedCarBrand = evt.target.value;
-     dispatch(changeFilter(selectedCarBrand));
+    dispatch(changeFilter(selectedCarBrand));
   };
 
   return (
@@ -37,19 +39,17 @@ export const FiltersForm = () => {
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel>
           Car brands
-          <StyledSelect value={carBrand} onChange={handleChange}>
-            <StyledOption value="">Select car</StyledOption>
-            {cars.map((car, index) => (
-              <StyledOption key={index} value={car.make}>
-                {car.make}
-              </StyledOption>
+          <StyledSelect value="" onChange={handleChange}>
+            <StyledOption value="">All</StyledOption>
+            {uniqueMakes.map(make => (
+              <StyledOption key={make } value={make}>{make }</StyledOption>
             ))}
+            
           </StyledSelect>
         </StyledLabel>
 
         <ButtonForm type="submit">Search</ButtonForm>
       </StyledForm>
     </FiltersContainer>
-  )
-}
-  
+  );
+};

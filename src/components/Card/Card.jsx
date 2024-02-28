@@ -1,4 +1,4 @@
-import { CarPhoto, ContainerTitles, Span, Text, Title } from "../ListCars/ListCars.styled";
+import { CarPhoto, ContainerTitles, Span, Text, Title } from "../CardsList/CardsList.styled";
 import {
   ButtonCard,
   ButtonClose,

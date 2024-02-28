@@ -47,6 +47,7 @@ border-radius: 14px;
   font-size: 16px;
   line-height: 1.25;
   color: rgba(18, 20, 23, 0.2);
+  overflow:scroll;
 `;
 
 export const StyledFieldTo = styled(Field)`

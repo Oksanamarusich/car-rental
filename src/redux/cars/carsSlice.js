@@ -8,8 +8,10 @@ const handlePending = (state) => {
 const handleFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  // state.cars = [...state.cars, ...action.payload];
-  state.cars = action.payload;
+    
+    //  state.cars = [...state.cars, ...action.payload];
+       state.cars = action.payload;
+  
 };
 
 const handleRejected = (state, action) => {
@@ -20,29 +22,29 @@ const handleFulfilledFavorites = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.isFavorite = true;
-  state.cars.favorites = [...state.cars, action.payload];
+  // state.cars.favorites = [...state.cars, action.payload];
 }
 
 const carsSlice = createSlice({
   name: "cars",
   initialState: {
     cars: [],
-    favoriters:[],
-    isFavorite:false,
+    
     isLoading: false,
     error: null,
   },
+  
 
   extraReducers: (builder) => {
     builder
       .addCase(getCars.pending, handlePending)
       .addCase(getCars.fulfilled, handleFulfilled)
       .addCase(getCars.rejected, handleRejected)
-    .addCase(getCarId.pending, handlePending)
-      .addCase(getCarId.fulfilled,handleFulfilledFavorites)
-    .addCase(getCarId.rejected, handleRejected);
+      .addCase(getCarId.pending, handlePending)
+      .addCase(getCarId.fulfilled, handleFulfilledFavorites)
+      .addCase(getCarId.rejected, handleRejected)
   },
 });
 
 export const carsReducer = carsSlice.reducer;
-export const { toggleFavorite } = carsSlice.reducer;
+export const { onNextPage } = carsSlice.actions;
