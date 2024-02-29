@@ -1,23 +1,20 @@
 import { useSelector } from "react-redux";
 
-import { selectCars } from "../../redux/cars/selectors";
+import { selectVisibleCars } from "../../redux/cars/selectors";
 import { ContainerListCars } from "./ListCars.styled";
 
 import { CardsList } from "../CardsList/CardsList";
 
 export const ListCars = () => {
-  const cars = useSelector(selectCars);
-  console.log(cars);
+  const cars = useSelector(selectVisibleCars);
 
   return (
     <>
-     
       <ContainerListCars>
-         {cars.map((car) => (
-           <CardsList key={car.id} car={car} />
-           ))}
-        </ContainerListCars>
-      
+        {cars.map((car) => (
+          <CardsList key={car.id} car={car} />
+        ))}
+      </ContainerListCars>
     </>
   );
 };

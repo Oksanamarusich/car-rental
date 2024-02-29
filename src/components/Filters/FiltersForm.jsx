@@ -1,6 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { selectCars, selectFilter } from "../../redux/cars/selectors";
 import { changeFilter } from "../../redux/filters/filterSlice";
 
 import {
@@ -11,27 +10,46 @@ import {
   StyledOption,
   StyledSelect,
 } from "./Filters.styled";
+import { useState } from "react";
 
 export const FiltersForm = () => {
-  const cars = useSelector(selectCars);
-  const carBrand = useSelector(selectFilter);
-  console.log(carBrand)
   const dispatch = useDispatch();
-  // const filteredCars = cars.filter((car) => car.make === carBrand);
-  // console.log(filteredCars);
-  const uniqueMakes = [...new Set(cars.map(car => car.make))];
-  console.log(uniqueMakes);
+  const [selectedMake, setSelectedMake] = useState("All");
+
+  const makes = [
+    "All",
+    "Buick",
+    "Volvo",
+    "HUMMER",
+    "Subaru",
+    "Mitsubishi",
+    "Nissan",
+    "Lincoln",
+    "GMC",
+    "Hyundai",
+    "MINI",
+    "Bentley",
+    "Mercedes-Benz",
+    "Aston Martin",
+    "Pontiac",
+    "Lamborghini",
+    "Audi",
+    "BMW",
+    "Chevrolet",
+    "Chrysler",
+    "Kia",
+    "Land",
+  ];
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(carBrand);
-    dispatch(changeFilter(carBrand));
+    const selectedValue = selectedMake;
+
+    dispatch(changeFilter(selectedValue));
   };
 
   const handleChange = (evt) => {
-    console.log(evt.target.value);
-    const selectedCarBrand = evt.target.value;
-    dispatch(changeFilter(selectedCarBrand));
+    setSelectedMake(evt.target.value);
   };
 
   return (
@@ -39,12 +57,13 @@ export const FiltersForm = () => {
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel>
           Car brands
-          <StyledSelect value="" onChange={handleChange}>
-            <StyledOption value="">All</StyledOption>
-            {uniqueMakes.map(make => (
-              <StyledOption key={make } value={make}>{make }</StyledOption>
+          <StyledSelect value={selectedMake} onChange={handleChange}>
+            <StyledOption value=""></StyledOption>
+            {makes.map((make) => (
+              <StyledOption key={make} value={make}>
+                {make}
+              </StyledOption>
             ))}
-            
           </StyledSelect>
         </StyledLabel>
 

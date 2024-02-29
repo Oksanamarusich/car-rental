@@ -9,8 +9,8 @@ const handleFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
     
-    //  state.cars = [...state.cars, ...action.payload];
-       state.cars = action.payload;
+      // state.cars = [...state.cars, ...action.payload];
+         state.cars = action.payload;
   
 };
 
