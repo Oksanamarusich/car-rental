@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.7cda0caf.css",
-    "main.js": "/car-rental/static/js/main.fe55c1a4.js",
-    "static/js/399.3cb8d3d5.chunk.js": "/car-rental/static/js/399.3cb8d3d5.chunk.js",
-    "static/js/875.26fa15ef.chunk.js": "/car-rental/static/js/875.26fa15ef.chunk.js",
+    "main.js": "/car-rental/static/js/main.ca357702.js",
+    "static/js/273.a71e475d.chunk.js": "/car-rental/static/js/273.a71e475d.chunk.js",
+    "static/js/790.cf5cbb5b.chunk.js": "/car-rental/static/js/790.cf5cbb5b.chunk.js",
     "static/js/500.fb09be91.chunk.js": "/car-rental/static/js/500.fb09be91.chunk.js",
-    "static/js/97.886463bf.chunk.js": "/car-rental/static/js/97.886463bf.chunk.js",
+    "static/js/826.0ac77ea4.chunk.js": "/car-rental/static/js/826.0ac77ea4.chunk.js",
     "static/js/156.52eeec85.chunk.js": "/car-rental/static/js/156.52eeec85.chunk.js",
+    "static/media/car-5476918_1280.jpg": "/car-rental/static/media/car-5476918_1280.983e1aeff562911dc7e5.jpg",
     "index.html": "/car-rental/index.html",
     "main.7cda0caf.css.map": "/car-rental/static/css/main.7cda0caf.css.map",
-    "main.fe55c1a4.js.map": "/car-rental/static/js/main.fe55c1a4.js.map",
-    "399.3cb8d3d5.chunk.js.map": "/car-rental/static/js/399.3cb8d3d5.chunk.js.map",
-    "875.26fa15ef.chunk.js.map": "/car-rental/static/js/875.26fa15ef.chunk.js.map",
+    "main.ca357702.js.map": "/car-rental/static/js/main.ca357702.js.map",
+    "273.a71e475d.chunk.js.map": "/car-rental/static/js/273.a71e475d.chunk.js.map",
+    "790.cf5cbb5b.chunk.js.map": "/car-rental/static/js/790.cf5cbb5b.chunk.js.map",
     "500.fb09be91.chunk.js.map": "/car-rental/static/js/500.fb09be91.chunk.js.map",
-    "97.886463bf.chunk.js.map": "/car-rental/static/js/97.886463bf.chunk.js.map",
+    "826.0ac77ea4.chunk.js.map": "/car-rental/static/js/826.0ac77ea4.chunk.js.map",
     "156.52eeec85.chunk.js.map": "/car-rental/static/js/156.52eeec85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.fe55c1a4.js"
+    "static/js/main.ca357702.js"
   ]
 }
