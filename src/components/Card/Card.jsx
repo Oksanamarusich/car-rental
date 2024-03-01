@@ -1,7 +1,12 @@
-import { CarPhoto, ContainerTitles, Span, Text, Title } from "../CardsList/CardsList.styled";
+import {
+  CarPhoto,
+  ContainerTitles,
+  Span,
+  Text,
+  Title,
+} from "../CardsList/CardsList.styled";
 import {
   ButtonCard,
-  ButtonClose,
   ContainerCard,
   ContainerRentalConditions,
   ContainerText,
@@ -11,7 +16,6 @@ import {
   TextContainer,
   TitleAcessories,
 } from "./Card.styled";
-import { IoMdClose } from "react-icons/io";
 
 export const Card = ({ car, id }) => {
   const mileage = new Intl.NumberFormat("en-US").format(car.mileage);
@@ -23,10 +27,12 @@ export const Card = ({ car, id }) => {
   return (
     <ContainerCard key={id}>
       <CarPhoto src={car.img} width={461} height={248} alt="car" />
-      <ContainerTitles><Title>
-        {car.make} <Span>{car.model}</Span>, {car.year}
-      </Title></ContainerTitles>
-      
+      <ContainerTitles>
+        <Title>
+          {car.make} <Span>{car.model}</Span>, {car.year}
+        </Title>
+      </ContainerTitles>
+
       <ContainerText>
         <Text>{car.address.split(",")[1]}</Text>
         <Text>{car.address.split(",")[0]}</Text>
@@ -66,7 +72,6 @@ export const Card = ({ car, id }) => {
       <ButtonCard type="button" onClick={handleCall}>
         Rental car
       </ButtonCard>
-      
     </ContainerCard>
   );
 };

@@ -22,10 +22,12 @@ export const CardsList = ({ car }) => {
 
   function openModal() {
     setIsOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     setIsOpen(false);
+    document.body.style.overflow = '';
   }
 
 
