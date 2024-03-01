@@ -16,6 +16,11 @@ export default function HomePage() {
     <main>
       <SectionHero>
         <Title>Rental car</Title>
+         <Link to={"/catalog"}>
+        <ContainerLink>
+          Choose a car 
+        </ContainerLink>
+      </Link>
       </SectionHero>
       <Section>
          <Text>

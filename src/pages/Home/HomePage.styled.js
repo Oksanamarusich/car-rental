@@ -3,22 +3,26 @@ import { styled } from "styled-components";
 import background from "../../img/car-5476918_1280.jpg";
 
 export const SectionHero = styled.section`
- margin-bottom: 54px;
+  margin-bottom: 54px;
   padding: 100px 0;
-  background-image: url(${background});
+  background-image: linear-gradient(
+      rgba(11, 68, 205, 0.1),
+      rgba(11, 68, 205, 0.1)
+    ),
+    url(${background});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: ${(props) => props.theme.colors.accent};
   width: 100%;
   height: 90vh;
 `;
-
-
 
 export const Title = styled.h1`
   display: block;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 60px;
   text-align: center;
 
   font-family: "Manrope", sans-serif;
@@ -29,7 +33,6 @@ export const Title = styled.h1`
   color: ${(props) => props.theme.colors.light};
 `;
 
-
 export const Text = styled.p`
   margin-bottom: 30px;
   font-family: "Manrope", sans-serif;
@@ -39,6 +42,8 @@ export const Text = styled.p`
   color: ${(props) => props.theme.colors.black};
 `;
 export const ContainerLink = styled.button`
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 150px;
   display: flex;
   justify-content: center;
