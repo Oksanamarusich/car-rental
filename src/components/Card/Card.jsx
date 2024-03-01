@@ -13,7 +13,7 @@ import {
 } from "./Card.styled";
 import { IoMdClose } from "react-icons/io";
 
-export const Card = ({ car, id, closeModal }) => {
+export const Card = ({ car, id }) => {
   const mileage = new Intl.NumberFormat("en-US").format(car.mileage);
 
   const handleCall = () => {
@@ -66,9 +66,7 @@ export const Card = ({ car, id, closeModal }) => {
       <ButtonCard type="button" onClick={handleCall}>
         Rental car
       </ButtonCard>
-      <ButtonClose type="button" onClick={closeModal}>
-        <IoMdClose />
-      </ButtonClose>
+      
     </ContainerCard>
   );
 };

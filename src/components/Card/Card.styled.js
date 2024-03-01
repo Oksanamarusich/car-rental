@@ -5,7 +5,8 @@ export const ContainerCard = styled.div`
   padding: 40px;
   border-radius: 24px;
 width: 541px;
-height: 100%;
+height:95vh;
+
   background-color: ${(props) => props.theme.colors.light};
   
 `;
@@ -69,6 +70,7 @@ export const ContainerRentalConditions = styled.div`
   gap: 22px 15px;
 `;
 export const ButtonCard = styled.button`
+margin-bottom:40px;
   border-radius: 12px;
   padding: 12px 50px;
   width: 168px;
@@ -87,10 +89,4 @@ export const ButtonCard = styled.button`
   }
 `;
 
-export const ButtonClose = styled.button`
-  position: absolute;
-  top: 10px;
-  left: 500px;
-  border: 0;
-  background-color: transparent;
-`;
+

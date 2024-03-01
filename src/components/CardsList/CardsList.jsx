@@ -1,4 +1,3 @@
-import Modal from "react-modal";
 import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
 import { useState } from "react";
 import {
@@ -14,30 +13,13 @@ import {
 } from "./CardsList.styled";
 
 import { Button } from "../Button.styled";
-
-
-Modal.setAppElement("#root");
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    padding: "0",
-    borderRadius: "24px",
-    overflow: "auto",
-  },
-  overlay: {
-    backgroundColor: "rgba(18, 20, 23, 0.3)",
-  },
-};
+import { ModalCard } from "../Modal/Modal";
+import { Card } from "../Card/Card";
 
 export const CardsList = ({ car }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [toggleHeart, setToggleHeart] = useState(false);
-  
+
   function openModal() {
     setIsOpen(true);
   }
@@ -46,10 +28,11 @@ export const CardsList = ({ car }) => {
     setIsOpen(false);
   }
 
+
   const handleFavoritesToggle = () => {
     console.log("click");
     //  dispatch(getCarId());
-     setToggleHeart(!toggleHeart);
+    setToggleHeart(!toggleHeart);
   };
   return (
     <CardContainer key={car.id}>
@@ -81,15 +64,13 @@ export const CardsList = ({ car }) => {
         )}
       </HeartButton>
 
-      <Modal
+      <ModalCard
+        onClose={closeModal}
         isOpen={modalIsOpen}
-        //  onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Car card"
       >
-        {/* <Card key={car.id} id={car.id} car={car} closeModal={closeModal} /> */}
-      </Modal>
+        <Card key={car.id} id={car.id} car={car} />
+      </ModalCard>
       <Button type="button" onClick={openModal}>
         Learn more
       </Button>
