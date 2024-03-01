@@ -12,7 +12,7 @@ import {
 } from "./Filters.styled";
 import { useState } from "react";
 
-export const FiltersForm = () => {
+export const Filters = () => {
   const dispatch = useDispatch();
   const [selectedMake, setSelectedMake] = useState("All");
 
@@ -43,9 +43,8 @@ export const FiltersForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const selectedValue = selectedMake;
 
-    dispatch(changeFilter(selectedValue));
+    dispatch(changeFilter(selectedMake));
   };
 
   const handleChange = (evt) => {

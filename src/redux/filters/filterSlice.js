@@ -4,12 +4,10 @@ const filterSlice = createSlice({
   name: "filter",
   initialState: {
     carBrand: [],
-    
   },
   reducers: {
     changeFilter(state, action) {
       state.carBrand = action.payload;
-       
     },
   },
 });

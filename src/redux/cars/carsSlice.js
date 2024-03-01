@@ -8,10 +8,9 @@ const handlePending = (state) => {
 const handleFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
-    
-      // state.cars = [...state.cars, ...action.payload];
-         state.cars = action.payload;
-  
+
+  // state.cars = [...state.cars, ...action.payload];
+   state.cars = action.payload;
 };
 
 const handleRejected = (state, action) => {
@@ -23,17 +22,16 @@ const handleFulfilledFavorites = (state, action) => {
   state.error = null;
   state.isFavorite = true;
   // state.cars.favorites = [...state.cars, action.payload];
-}
+};
 
 const carsSlice = createSlice({
   name: "cars",
   initialState: {
     cars: [],
-    
+
     isLoading: false,
     error: null,
   },
-  
 
   extraReducers: (builder) => {
     builder
@@ -42,7 +40,7 @@ const carsSlice = createSlice({
       .addCase(getCars.rejected, handleRejected)
       .addCase(getCarId.pending, handlePending)
       .addCase(getCarId.fulfilled, handleFulfilledFavorites)
-      .addCase(getCarId.rejected, handleRejected)
+      .addCase(getCarId.rejected, handleRejected);
   },
 });
 

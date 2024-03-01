@@ -1,25 +1,35 @@
 import { ListCars } from "../../components/ListCars/ListCars";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCars } from "../../redux/cars/operations";
 import { ButtonloadMore } from "../../components/ButtonLoadMore/ButtonLoadMore";
-import { FiltersForm } from "../../components/Filters/FiltersForm";
-import { changeFilter } from "../../redux/filters/filterSlice";
-import { selectFilter, selectVisibleCars } from "../../redux/cars/selectors";
+import { Filters } from "../../components/Filters/Filters";
+import { selectCars} from "../../redux/cars/selectors";
+import { Section } from "../../components/Section.styled";
 
 export default function Catalog() {
+  const cars = useSelector(selectCars);
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  
+
+  const handleLoadMore = () => {
+    setPage((prevState) => prevState + 1);
+  };
 
   useEffect(() => {
-    dispatch(getCars());
-  }, [dispatch]);
+    dispatch(getCars(page));
+  }, [dispatch, page]);
 
   return (
     <>
-      <FiltersForm />
-      <ListCars />
-      <ButtonloadMore />
+      <Filters />
+      <Section>
+        <ListCars />
+      {cars.length >= 12 && <ButtonloadMore handleLoadMore={handleLoadMore} />}
+      </Section>
+      
     </>
   );
 }
