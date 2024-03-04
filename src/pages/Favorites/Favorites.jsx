@@ -1,16 +1,36 @@
-// import { useState } from "react";
-// import { useSelector } from "react-redux"
-// import { selectCars } from "../../redux/cars/selectors"
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Listfavorites } from "../../components/ListFavorites/ListFavorites";
+
+import { Section } from "../../components/Section.styled";
+import { selectFavorites } from "../../redux/favorites/selectorsFavorites";
+import { SpanFavorites, Text } from "./Favorites.styled";
 
 export default function Favorites() {
-    // const cars = useSelector(selectCars);
-    // const [favorites, setFavorites] = useState([]);
-    
-    // const addToFavorites = (id) => {
-    //     const car = car.find(car => car.id === id);
-    //     setFavorites(car);
-    // }
-    return <>
-        <h2>Favorites page</h2>
-    </>
+  const favorites = useSelector(selectFavorites);
+  
+  return (
+    <main>
+      <Section>
+        <h1 hidden>Favorites page</h1>
+        {favorites.length ? (
+        
+          <Listfavorites />
+         
+        ): (
+            <div>
+            <Text>There are no favorite cars here yet.</Text>
+            <Text>
+              To add a car, go to the{" "}
+              <Link to="/catalog">
+                <SpanFavorites>Catalog</SpanFavorites>
+              </Link>{" "}
+              .
+            </Text>
+          </div>
+            
+        )}
+      </Section>
+    </main>
+  );
 }

@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCars } from "../../redux/cars/operations";
 import { ButtonloadMore } from "../../components/ButtonLoadMore/ButtonLoadMore";
 import { Filters } from "../../components/Filters/Filters";
-import { selectCars} from "../../redux/cars/selectors";
+import { selectCars } from "../../redux/cars/selectors";
 import { Section } from "../../components/Section.styled";
 
 export default function Catalog() {
   const cars = useSelector(selectCars);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  
 
   const handleLoadMore = () => {
     setPage((prevState) => prevState + 1);
@@ -23,13 +22,17 @@ export default function Catalog() {
   }, [dispatch, page]);
 
   return (
-    <>
-      <Filters />
+    <main>
+      <Section>
+        <h1 hidden>Catalog page</h1>
+        <Filters />
+      </Section>
       <Section>
         <ListCars />
-      {cars.length >= 12 && <ButtonloadMore handleLoadMore={handleLoadMore} />}
+        {cars.length >= 12 && (
+          <ButtonloadMore handleLoadMore={handleLoadMore} />
+        )}
       </Section>
-      
-    </>
+    </main>
   );
 }

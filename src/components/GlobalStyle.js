@@ -4,6 +4,7 @@ import "modern-normalize";
 export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0 auto;
+  min-width: 100%;
   font-family:  'Manrope',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

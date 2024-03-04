@@ -15,26 +15,33 @@ import {
 import { Button } from "../Button.styled";
 import { ModalCard } from "../Modal/Modal";
 import { Card } from "../Card/Card";
+import { addFavorites } from "../../redux/favorites/favoritesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorites } from "../../redux/favorites/selectorsFavorites";
 
 export const CardsList = ({ car }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [toggleHeart, setToggleHeart] = useState(false);
 
+  const favorites = useSelector(selectFavorites);
+
+  const isFavorites = favorites.some((favorite) => favorite.id === car.id);
+
+  const dispatch = useDispatch();
+
   function openModal() {
     setIsOpen(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     setIsOpen(false);
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   }
 
-
   const handleFavoritesToggle = () => {
-    console.log("click");
-    //  dispatch(getCarId());
     setToggleHeart(!toggleHeart);
+    dispatch(addFavorites(car));
   };
   return (
     <CardContainer key={car.id}>
@@ -59,7 +66,7 @@ export const CardsList = ({ car }) => {
       </Container>
 
       <HeartButton key={car.id} id={car.id} onClick={handleFavoritesToggle}>
-        {toggleHeart ? (
+        {isFavorites ? (
           <IoHeartSharp color="#3470FF" />
         ) : (
           <IoHeartOutline size="18px" />
