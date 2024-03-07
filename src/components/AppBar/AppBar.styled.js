@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const Header = styled.header`
+export const ContainerHeader = styled.div`
   padding: 24px 125px;
 
   width: 100%;

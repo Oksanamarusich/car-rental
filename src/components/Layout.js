@@ -18,11 +18,11 @@ export const Container = styled.div`
 
 export const Layout = () => {
   return (
-    <Container>
+    <>
       <AppBar />
       <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
-    </Container>
+    </>
   );
 };

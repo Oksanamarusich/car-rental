@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
-import background from "../../img/car-5476918_1280.jpg";
+import background from "../../img/car-5476918_1280.webp";
 
 export const SectionHero = styled.section`
   margin-bottom: 54px;
