@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-  
+
   <h1 align="center">Car rental</h1>
 
   <p align="center">
@@ -7,7 +7,6 @@
 
     [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-  
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -21,7 +20,9 @@
   </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## Features
+
 <ul>
   <li>
     <p>View a list of available cars</p>
@@ -46,13 +47,12 @@
   <li>MockAPI</li>
 </ul>
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
+
 To get started with this project, follow installation instructions below
 
 ## Installation
@@ -69,15 +69,8 @@ To get started with this project, follow installation instructions below
    ```sh
    npm start
    ```
-4. Open  https://oksanamarusich.github.io/car-rental/   to view in the browser
-
+4. Open https://oksanamarusich.github.io/car-rental/ to view in the browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[product-screenshot]: imag/screenshot.png
-
-
-
-
-
-
+[product-screenshot]: src/img/Car-rental%202024-03-07%20223514.png
