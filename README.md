@@ -5,8 +5,7 @@
   <p align="center">
     This project is a web aplication that allows users to rent cars for short periods of time.</p>
 
-  src/img/Car-rental%202024-03-07%20223514.png
-
+![Product-screensh](https://github.com/jon/coolproject/raw/master/image/image.png)
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -73,4 +72,13 @@ To get started with this project, follow installation instructions below
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[product-screenshot]: src/img/Car-rental%202024-03-07%20223514.png
+
+
+![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)
+
+{username} — ваш ник на ГитХабе;
+{repository} — репозиторий где хранятся картинки;
+{branch} — ветка репозитория;
+{path} — путь к месту нахождения картинки.
+@ArmyTools
+ArmyTools commented on Oct 5, 2021
