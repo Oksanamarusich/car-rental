@@ -4,6 +4,9 @@
 
   <p align="center">
     This project is a web aplication that allows users to rent cars for short periods of time.</p>
+
+    [![Product Name Screen Shot][product-screenshot]](https://example.com)
+
   
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -70,6 +73,8 @@ To get started with this project, follow installation instructions below
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[product-screenshot]: imag/screenshot.png
 
 
 
