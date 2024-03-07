@@ -5,7 +5,7 @@
   <p align="center">
     This project is a web aplication that allows users to rent cars for short periods of time.</p>
 
-    [![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Image alt](https://github.com/oksanamarusich/car-rental/raw/main/src/img/Car-rental 2024-03-07 223514.png)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -72,5 +72,3 @@ To get started with this project, follow installation instructions below
 4. Open https://oksanamarusich.github.io/car-rental/ to view in the browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-[product-screenshot]: src/img/Car-rental%202024-03-07%20223514.png
