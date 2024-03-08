@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { Toaster } from "react-hot-toast";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Loader } from "./Loader/Loader";
@@ -10,7 +9,7 @@ const Favorites = lazy(() => import("../pages/Favorites/Favorites"));
 
 export const App = () => {
   return (
-    <Suspense fallback={<Loader/>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -19,8 +18,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-
-      <Toaster />
     </Suspense>
   );
 };

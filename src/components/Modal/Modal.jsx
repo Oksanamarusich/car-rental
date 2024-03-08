@@ -12,22 +12,17 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-     padding: "0",
+    padding: "0",
     borderRadius: "24px",
     overflowY: "scroll",
-    
-    
-    
   },
   overlay: {
-    position:"fixed",
+    position: "fixed",
     backgroundColor: "rgba(18, 20, 23, 0.5)",
-    },
-    
+  },
 };
 
 export const ModalCard = ({ isOpen, onClose, children }) => {
-    
   return (
     <Modal
       isOpen={isOpen}
