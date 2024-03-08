@@ -18,9 +18,9 @@ export const getCars = createAsyncThunk(
 
 export const getAllCars = createAsyncThunk(
   "cars/getFilters",
-  async (_, thunkAPI) => {
+  async (filter, thunkAPI) => {
     try {
-      const responce = await axios.get("/cars?make");
+      const responce = await axios.get(`/cars?make=${filter}`);
 
       return responce.data;
     } catch (e) {

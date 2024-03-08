@@ -2,14 +2,15 @@ import { ListCars } from "../../components/ListCars/ListCars";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCars } from "../../redux/cars/operations";
+import { getAllCars, getCars } from "../../redux/cars/operations";
 import { ButtonloadMore } from "../../components/ButtonLoadMore/ButtonLoadMore";
 import { Filters } from "../../components/Filters/Filters";
-import { selectCars } from "../../redux/cars/selectors";
+import { selectCars, selectFilter } from "../../redux/cars/selectors";
 import { Section } from "../../components/Section.styled";
 
 export default function Catalog() {
   const cars = useSelector(selectCars);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
@@ -20,6 +21,13 @@ export default function Catalog() {
   useEffect(() => {
     dispatch(getCars(page));
   }, [dispatch, page]);
+
+  useEffect(() => {
+    if (filter === "") {
+      return;
+    }
+    dispatch(getAllCars(filter));
+  }, [dispatch, filter]);
 
   return (
     <main>
