@@ -5,7 +5,7 @@
   <p align="center">
     This project is a web aplication that allows users to rent cars for short periods of time.</p>
    
-![Image product](./src/img/Car-rental 2024-03-07 223514.png)
+![Image product](./src/img/car-rental%20223514.png)
 
 <!-- TABLE OF CONTENTS -->
 <details>
