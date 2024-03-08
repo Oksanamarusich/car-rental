@@ -26,43 +26,28 @@ export const StyledSelect = styled.select`
   outline: transparent;
   outline-offset: -1px;
   border-radius: 14px;
-  padding:14px 18px; 
+  padding: 14px 18px;
   width: 224px;
   height: 48px;
   border: 0;
   background: ${(props) => props.theme.colors.input};
   font-family: "Manrope", sans-serif;
-font-weight: 500;
-font-size: 18px;
-line-height: 1.11111;
-color: ${props=>props.theme.colors.black};
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: ${(props) => props.theme.colors.black};
   &:active {
     border: 0;
   }
 `;
 export const StyledOption = styled.option`
-border-radius: 14px;
+  border-radius: 14px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
   color: rgba(18, 20, 23, 0.2);
-  overflow:scroll;
-`;
-
-export const StyledFieldTo = styled(Field)`
-  outline: transparent;
-  outline-offset: -1px;
-  border-right: 1px solid rgba(138, 138, 137, 0.2);
-  border-radius: 14px 0 0 14px;
-  width: 160px;
-  height: 48px;
-
-  border: 0;
-  background: ${(props) => props.theme.colors.input};
-  &:active {
-    border: 0;
-  }
+  overflow: scroll;
 `;
 
 export const StyledFieldPrice = styled(Field)`
@@ -80,9 +65,9 @@ export const StyledFieldPrice = styled(Field)`
   }
 `;
 
-
 export const ButtonForm = styled.button`
   margin-top: 26px;
+  margin-right: 9px;
   border-radius: 12px;
   padding: 14px 44px;
   width: 136px;
@@ -94,10 +79,10 @@ export const ButtonForm = styled.button`
   font-size: 14px;
   line-height: 1.42857;
   color: ${(props) => props.theme.colors.light};
-  transition:background-color ${props=>props.theme.animation.cubicBezier};
+  transition: background-color ${(props) => props.theme.animation.cubicBezier};
   &:hover {
-background-color:${props => props.theme.colors.hover};
-  };
+    background-color: ${(props) => props.theme.colors.hover};
+  }
 `;
 
 export const StyledForm = styled.form`

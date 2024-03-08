@@ -11,6 +11,7 @@ import { Section } from "../../components/Section.styled";
 export default function Catalog() {
   const cars = useSelector(selectCars);
   const filter = useSelector(selectFilter);
+  console.log(filter);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
@@ -19,15 +20,21 @@ export default function Catalog() {
   };
 
   useEffect(() => {
+    if (filter === "") {
     dispatch(getCars(page));
-  }, [dispatch, page]);
+      
+    }
+  }, [dispatch, page,filter]);
 
   useEffect(() => {
     if (filter === "") {
       return;
     }
+    // if (filter === "All") {
+    //   dispatch(getCars(page));
+    // }
     dispatch(getAllCars(filter));
-  }, [dispatch, filter]);
+  }, [dispatch, filter, page]);
 
   return (
     <main>

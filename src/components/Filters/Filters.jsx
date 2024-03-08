@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { changeFilter } from "../../redux/filters/filterSlice";
+import { changeFilter, resetFilter } from "../../redux/filters/filterSlice";
 
 import {
   ButtonForm,
@@ -14,10 +14,9 @@ import { useState } from "react";
 
 export const Filters = () => {
   const dispatch = useDispatch();
-  const [selectedMake, setSelectedMake] = useState("All");
+  const [selectedMake, setSelectedMake] = useState("");
 
   const makes = [
-    "All",
     "Buick",
     "Volvo",
     "HUMMER",
@@ -45,11 +44,17 @@ export const Filters = () => {
     evt.preventDefault();
 
     dispatch(changeFilter(selectedMake));
+    
   };
 
   const handleChange = (evt) => {
     setSelectedMake(evt.target.value);
   };
+
+  const handleReset = () => {
+    setSelectedMake("");
+    dispatch(resetFilter());
+  }
 
   return (
     <FiltersContainer>
@@ -57,7 +62,7 @@ export const Filters = () => {
         <StyledLabel>
           Car brands
           <StyledSelect value={selectedMake} onChange={handleChange}>
-            <StyledOption value=""></StyledOption>
+            <StyledOption value="">All</StyledOption>
             {makes.map((make) => (
               <StyledOption key={make} value={make}>
                 {make}
@@ -67,6 +72,7 @@ export const Filters = () => {
         </StyledLabel>
 
         <ButtonForm type="submit">Search</ButtonForm>
+        <ButtonForm type="reset" onClick={handleReset}>Reset</ButtonForm>
       </StyledForm>
     </FiltersContainer>
   );
