@@ -19,7 +19,7 @@ import { addFavorites } from "../../redux/favorites/favoritesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/favorites/selectorsFavorites";
 
-export const CardsList = ({ car }) => {
+export const CardsList = ({ car, index }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [toggleHeart, setToggleHeart] = useState(false);
 
@@ -44,7 +44,7 @@ export const CardsList = ({ car }) => {
     dispatch(addFavorites(car));
   };
   return (
-    <CardContainer key={car.id}>
+    <CardContainer key={index}>
       <CarPhoto src={car.img} width={274} height={268} alt={car.make} />
 
       <ContainerTitles>
@@ -78,7 +78,7 @@ export const CardsList = ({ car }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
       >
-        <Card key={car.id} id={car.id} car={car} />
+        <Card  id={car.id} car={car} />
       </ModalCard>
       <Button type="button" onClick={openModal}>
         Learn more

@@ -10,9 +10,11 @@ import { Section } from "../../components/Section.styled";
 
 export default function Catalog() {
   const cars = useSelector(selectCars);
+
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+ 
 
   const handleLoadMore = () => {
     setPage((prevState) => prevState + 1);
@@ -39,7 +41,7 @@ export default function Catalog() {
         <Filters />
       </Section>
       <Section>
-        <ListCars />
+        <ListCars cars = {cars} />
         {cars.length >= 12 && (
           <ButtonloadMore handleLoadMore={handleLoadMore} />
         )}

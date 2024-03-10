@@ -5,14 +5,14 @@ import { ContainerListCars } from "./ListCars.styled";
 
 import { CardsList } from "../CardsList/CardsList";
 
-export const ListCars = () => {
-  const cars = useSelector(selectVisibleCars);
+export const ListCars = ({cars}) => {
+  // const cars = useSelector(selectVisibleCars);
 
   return (
     <>
       <ContainerListCars>
-        {cars.map((car) => (
-          <CardsList key={car.id} car={car} />
+        {cars.map((car, index) => (
+          <CardsList key={index} car={car} />
         ))}
       </ContainerListCars>
     </>

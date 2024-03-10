@@ -9,8 +9,8 @@ const handleFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
 
-  // state.cars = [...state.cars, ...action.payload];
-  state.cars = action.payload;
+  state.cars = [...state.cars, ...action.payload];
+  // state.cars = action.payload;
 };
 
 const handleRejected = (state, action) => {
@@ -28,6 +28,7 @@ const carsSlice = createSlice({
   name: "cars",
   initialState: {
     cars: [],
+    page: 1,
 
     isLoading: false,
     error: null,
@@ -45,4 +46,3 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
-export const { onNextPage } = carsSlice.actions;
