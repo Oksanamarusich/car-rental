@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import { AppBar } from "./AppBar/AppBar.jsx";
 
 import { Suspense } from "react";
