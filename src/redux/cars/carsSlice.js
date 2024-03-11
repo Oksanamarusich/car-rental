@@ -10,7 +10,6 @@ const handleFulfilled = (state, action) => {
   state.error = null;
 
   state.cars = [...state.cars, ...action.payload];
-  // state.cars = action.payload;
 };
 
 const handleRejected = (state, action) => {
@@ -33,6 +32,11 @@ const carsSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    clearCars: (state) => {
+      state.cars = [];
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -45,4 +49,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const { clearCars } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

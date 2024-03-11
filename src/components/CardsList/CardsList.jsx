@@ -78,7 +78,7 @@ export const CardsList = ({ car, index }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
       >
-        <Card  id={car.id} car={car} />
+        <Card id={car.id} car={car} />
       </ModalCard>
       <Button type="button" onClick={openModal}>
         Learn more

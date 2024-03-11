@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const CardContainer = styled.li`
   position: relative;
- width: 274px;
+  width: 274px;
 `;
 
 export const CarPhoto = styled.img`
@@ -29,7 +29,6 @@ export const ContainerTitles = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  
 `;
 export const Container = styled.div`
   display: flex;
@@ -37,7 +36,7 @@ export const Container = styled.div`
   gap: 12px;
   width: 251px;
   height: 18px;
-  overflow:hidden;
+  overflow: hidden;
 `;
 export const Text = styled.p`
   position: relative;
@@ -48,16 +47,7 @@ export const Text = styled.p`
   color: ${(props) => props.theme.colors.gray};
   white-space:nowrap:
 
-  /* &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 110%;
-    transform: translateX(-50%) rotate(90deg);
-    width: 16px;
-    height: 1px;
-    background-color: ${(props) => props.theme.colors.before};
-  } */
+ 
 `;
 export const Box = styled.div`
   display: flex;
@@ -65,7 +55,7 @@ export const Box = styled.div`
   margin-bottom: 4px;
   width: 272px;
   height: 18px;
-  overflow:hidden;
+  overflow: hidden;
 `;
 
 export const HeartButton = styled.button`

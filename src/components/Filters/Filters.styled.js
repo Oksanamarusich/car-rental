@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { Field } from "formik";
 
 export const FiltersContainer = styled.div`
   padding: 0 125px;
@@ -48,21 +47,6 @@ export const StyledOption = styled.option`
   line-height: 1.25;
   color: rgba(18, 20, 23, 0.2);
   overflow: scroll;
-`;
-
-export const StyledFieldPrice = styled(Field)`
-  outline: transparent;
-  outline-offset: -1px;
-  border-radius: 14px;
-  padding: 14px 18px;
-  width: 125px;
-  height: 48px;
-
-  border: 0;
-  background: ${(props) => props.theme.colors.input};
-  &:active {
-    border: 0;
-  }
 `;
 
 export const ButtonForm = styled.button`

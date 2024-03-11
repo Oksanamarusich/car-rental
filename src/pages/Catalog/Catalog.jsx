@@ -14,7 +14,6 @@ export default function Catalog() {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
- 
 
   const handleLoadMore = () => {
     setPage((prevState) => prevState + 1);
@@ -30,9 +29,8 @@ export default function Catalog() {
     if (filter === "") {
       return;
     }
-
     dispatch(getAllCars(filter));
-  }, [dispatch, filter, page]);
+  }, [dispatch, filter]);
 
   return (
     <main>
@@ -41,8 +39,8 @@ export default function Catalog() {
         <Filters />
       </Section>
       <Section>
-        <ListCars cars = {cars} />
-        {cars.length >= 12 && (
+        <ListCars cars={cars} />
+        {cars.length >= 12  && (
           <ButtonloadMore handleLoadMore={handleLoadMore} />
         )}
       </Section>

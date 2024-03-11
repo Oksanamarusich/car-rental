@@ -10,19 +10,19 @@ import { PersistGate } from "redux-persist/integration/react";
 
 const theme = {
   colors: {
-    light: '#ffffff',
-    black: '#121417',
-    accent: '#3470FF',
-    gray: 'rgba(18, 20, 23, 0.5)',
-    brown: '#8a8a89',
-    input: '#f7f7fb',
-    hover: '#0b44cd',
-    before:'rgba(18, 20, 23, 0.1)',
+    light: "#ffffff",
+    black: "#121417",
+    accent: "#3470FF",
+    gray: "rgba(18, 20, 23, 0.5)",
+    brown: "#8a8a89",
+    input: "#f7f7fb",
+    hover: "#0b44cd",
+    before: "rgba(18, 20, 23, 0.1)",
   },
-  
+
   animation: {
-    cubicBezier: '0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98)',
-  }
+    cubicBezier: "0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98)",
+  },
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -4,11 +4,10 @@ export const ContainerCard = styled.div`
   position: relative;
   padding: 40px;
   border-radius: 24px;
-width: 541px;
-height:95vh;
+  width: 541px;
+  height: 95vh;
 
   background-color: ${(props) => props.theme.colors.light};
-  
 `;
 
 export const ContainerText = styled.div`
@@ -17,16 +16,16 @@ export const ContainerText = styled.div`
   margin-bottom: 4px;
   width: 272px;
   height: 18px;
-  overflow:hidden;
+  overflow: hidden;
 `;
 
 export const TextBox = styled.div`
-display:flex;
-gap:12px;
-margin-bottom:14px;
-height: 18px;
-overflow:hidden;
-`
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  height: 18px;
+  overflow: hidden;
+`;
 
 export const DescriptionText = styled.p`
   margin-bottom: 24px;
@@ -51,7 +50,6 @@ export const TextContainer = styled.div`
   margin-bottom: 24px;
   width: 461px;
   height: 40px;
-  
 `;
 
 export const RentalConditions = styled.p`
@@ -70,7 +68,7 @@ export const ContainerRentalConditions = styled.div`
   gap: 22px 15px;
 `;
 export const ButtonCard = styled.button`
-margin-bottom:40px;
+  margin-bottom: 40px;
   border-radius: 12px;
   padding: 12px 50px;
   width: 168px;
@@ -88,5 +86,3 @@ margin-bottom:40px;
     background-color: ${(props) => props.theme.colors.hover};
   }
 `;
-
-

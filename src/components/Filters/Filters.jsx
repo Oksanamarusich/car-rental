@@ -11,6 +11,7 @@ import {
   StyledSelect,
 } from "./Filters.styled";
 import { useState } from "react";
+import { clearCars } from "../../redux/cars/carsSlice";
 
 export const Filters = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,6 @@ export const Filters = () => {
     evt.preventDefault();
 
     dispatch(changeFilter(selectedMake));
-    
   };
 
   const handleChange = (evt) => {
@@ -54,7 +54,8 @@ export const Filters = () => {
   const handleReset = () => {
     setSelectedMake("");
     dispatch(resetFilter());
-  }
+    dispatch(clearCars());
+  };
 
   return (
     <FiltersContainer>
@@ -72,7 +73,9 @@ export const Filters = () => {
         </StyledLabel>
 
         <ButtonForm type="submit">Search</ButtonForm>
-        <ButtonForm type="reset" onClick={handleReset}>Reset</ButtonForm>
+        <ButtonForm type="reset" onClick={handleReset}>
+          Reset
+        </ButtonForm>
       </StyledForm>
     </FiltersContainer>
   );
